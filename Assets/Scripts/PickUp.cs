@@ -13,11 +13,6 @@ public class PickUp : MonoBehaviour {
 		{
 			gotKey = true;
 			Destroy (gameObject);
-//			Vector3 newPosition = transform.position;
-//			newPosition.y = -10.0f; //FIXME: the inventory is under the floor
-//									// check the y cohordinate to know whether it
-//									// has been picked up.
-//			transform.position = newPosition;
 		}
 	}
 }

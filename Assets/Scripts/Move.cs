@@ -7,21 +7,11 @@ public class Move : MonoBehaviour {
 	public float speed;
 	public float bulletSpeed;
 	public GameObject refBullet;
-	public int weaponType;
 
-	Vector3 lastSpeed = new Vector3(0,0,-1);
+	private Vector3 lastSpeed = new Vector3(0,0,-1);
 
 	// Update is called once per frame
 	void Update () {
-
-		// Select weapon type (debug only)
-		if (Input.GetKeyDown("1")) {
-			weaponType = 1;
-		} else if (Input.GetKeyDown("2")) {
-			weaponType = 2;
-		} if (Input.GetKeyDown("3")) {
-			weaponType = 3;
-		}
 
 		// Get the horizontal and vertical axis delta movements.
 		// By default they are mapped to the arrow keys.
@@ -37,7 +27,7 @@ public class Move : MonoBehaviour {
 		// Calculate the player direction
 		Vector3 speedDir = Vector3.ClampMagnitude(new Vector3(translationX, 0, translationZ), 1);
 
-		// Remember the lst direction player was moving towards
+		// Remember the last direction player was moving towards
 		if (speedDir.magnitude == 0) {
 			speedDir = lastSpeed;
 		} else {
@@ -59,17 +49,17 @@ public class Move : MonoBehaviour {
 			Vector3 speedDir5 = Vector3.Lerp(speedDir, perp2, 0.22f);
 			speedDir3.Normalize();
 
-			if (weaponType == 1 || weaponType == 2 || weaponType == 3) {
+			if (Shortcuts.weaponType == 1 || Shortcuts.weaponType == 2 || Shortcuts.weaponType == 3) {
 				GameObject bullet = Instantiate(refBullet, transform.position + 1 * speedDir, transform.rotation) as GameObject;
 				bullet.rigidbody.velocity = speedDir * bulletSpeed;
 			}
-			if (weaponType == 2 || weaponType == 3) {
+			if (Shortcuts.weaponType == 2 || Shortcuts.weaponType == 3) {
 				GameObject bullet2 = Instantiate(refBullet, transform.position + 1 * speedDir2, transform.rotation) as GameObject;
 				bullet2.rigidbody.velocity = speedDir2 * bulletSpeed;
 				GameObject bullet3 = Instantiate(refBullet, transform.position + 1 * speedDir3, transform.rotation) as GameObject;
 				bullet3.rigidbody.velocity = speedDir3 * bulletSpeed;
 			}
-			if (weaponType == 3) {
+			if (Shortcuts.weaponType == 3) {
 				GameObject bullet4 = Instantiate(refBullet, transform.position + 1 * speedDir4, transform.rotation) as GameObject;
 				bullet4.rigidbody.velocity = speedDir4 * bulletSpeed;
 				GameObject bullet5 = Instantiate(refBullet, transform.position + 1 * speedDir5, transform.rotation) as GameObject;

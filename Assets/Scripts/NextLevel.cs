@@ -22,7 +22,7 @@ public class NextLevel : MonoBehaviour {
 	IEnumerator GoToNextLevel (GameObject go) {
 		Vector3 newPosition = transform.position;
 
-		yield return new WaitForSeconds(1.0f);
+		yield return new WaitForSeconds(1.5f);
 
 		for (float y = 5.0f; y < 500.0f; y+=5.0f) {
 

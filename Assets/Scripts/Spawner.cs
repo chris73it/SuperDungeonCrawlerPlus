@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Spawner : MonoBehaviour {
 
-	public float interval = 2.0f;
+	public float interval;
 	public GameObject creature;
 
 	// Use this for initialization
