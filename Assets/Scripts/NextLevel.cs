@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class NextLevel : MonoBehaviour {
-
+	
 	public string collidedTo;
 
 	private bool upping = false;
@@ -19,7 +19,7 @@ public class NextLevel : MonoBehaviour {
 		}
 	}
 
-	IEnumerator GoToNextLevel (GameObject go) {
+	IEnumerator GoToNextLevel (GameObject otherObject) {
 		Vector3 newPosition = transform.position;
 
 		yield return new WaitForSeconds(1.5f);
@@ -28,11 +28,12 @@ public class NextLevel : MonoBehaviour {
 
 			newPosition.y += y/500.0f;
 			transform.position = newPosition;
-			go.transform.position = newPosition;
+			otherObject.transform.position = newPosition;
 
 			yield return new WaitForSeconds(0.016f);
 		}
-		Destroy (go.gameObject);//FIXME: go to next level
-		Destroy (gameObject);//FIXME: go to next level
+
+		Destroy (gameObject);// Remove the exit/elevator
+		Application.LoadLevel(++Globals.currentLevel);
 	}
 }
