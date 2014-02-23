@@ -29,6 +29,7 @@ public class PlayerCollision : MonoBehaviour {
 
 			yield return new WaitForSeconds(0.016f);
 		}
-		Destroy (gameObject);
+		PickUp.gotKey = false;
+		Application.LoadLevel(Globals.currentLevel);
 	}
 }

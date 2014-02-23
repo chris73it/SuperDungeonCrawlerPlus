@@ -6,7 +6,6 @@ public class Spawner : MonoBehaviour {
 	public float interval;
 	public GameObject creature;
 
-	// Use this for initialization
 	void Start () {
 		StartCoroutine("Spawn");
 	}
@@ -18,7 +17,7 @@ public class Spawner : MonoBehaviour {
 			newPosition3D.x += newPosition2D.x;
 			newPosition3D.y = 3;
 			newPosition3D.z += newPosition2D.y;
-			GameObject spawned = Instantiate(creature, newPosition3D, transform.rotation) as GameObject;
+			Instantiate(creature, newPosition3D, transform.rotation);
 			yield return new WaitForSeconds(interval);
 		}
 	}
