@@ -7,6 +7,8 @@ public class PlayerCollision : MonoBehaviour {
 
 	void OnCollisionEnter (Collision collision)
 	{
+		print(name);
+
 		if (collision.gameObject.tag == collidedTo)
 		{
 			//TODO: push the enemy in the opposite direction of the enemy's motion
@@ -35,8 +37,13 @@ public class PlayerCollision : MonoBehaviour {
 
 			yield return new WaitForSeconds(0.016f);
 		}
-		PickUp.gotKey = false;
-		Globals.playerEnergy = 100f;
-		Application.LoadLevel(Globals.currentLevel);
+		Debug.Log (Globals.numLives);
+		if (--Globals.numLives > 0) {
+			PickUp.gotKey = false;
+			Globals.playerEnergy = 100f;
+			Application.LoadLevel(Globals.currentLevel);
+		} else {
+			Application.LoadLevel("Dead_Level");
+		}
 	}
 }
