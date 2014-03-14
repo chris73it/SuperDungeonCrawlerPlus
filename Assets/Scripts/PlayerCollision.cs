@@ -9,7 +9,13 @@ public class PlayerCollision : MonoBehaviour {
 	{
 		if (collision.gameObject.tag == collidedTo)
 		{
-			StartCoroutine("FlyToHeavenWhileFading");
+			//TODO: push the enemy in the opposite direction of the enemy's motion
+
+			Globals.playerEnergy -= 10f;
+			if (Globals.playerEnergy <= 0f) {
+				Globals.playerEnergy = 0f;
+				StartCoroutine("FlyToHeavenWhileFading");
+			}
 		}
 	}
 	
@@ -30,6 +36,7 @@ public class PlayerCollision : MonoBehaviour {
 			yield return new WaitForSeconds(0.016f);
 		}
 		PickUp.gotKey = false;
+		Globals.playerEnergy = 100f;
 		Application.LoadLevel(Globals.currentLevel);
 	}
 }
