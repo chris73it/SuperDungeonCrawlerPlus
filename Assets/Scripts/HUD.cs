@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Energy : MonoBehaviour {
+public class HUD : MonoBehaviour {
 	// drag a texture as the icon to move on the progress bar
 	public Texture progIcon;
 	
@@ -11,7 +11,7 @@ public class Energy : MonoBehaviour {
 	float barProgress;
 
 	// label
-	float labelWidth = 48f;
+	float energyLabelWidth = 48f;
 	
 	// energy
 	float maxEnergy = 100f + 1f; // the +1f makes playerEnergy still visible when it is 100f
@@ -29,18 +29,21 @@ public class Energy : MonoBehaviour {
 	void OnGUI() {
 		// create a GUI group the width of the bar and twice its height
 		// in order to leave room for 'Start' and 'End' text under the bar
-		GUI.BeginGroup(new Rect (10, 10, labelWidth+barWidth, barHeight));
+		GUI.BeginGroup(new Rect (10, 10, 2*energyLabelWidth+barWidth, 2*barHeight));
 		
 		// add energy text label at the leftmost position within the GUI.group
-		GUI.Label(new Rect(0, 0, labelWidth, barHeight), "Energy");
+		GUI.Label(new Rect(0, 0, energyLabelWidth, barHeight), "Energy");
 		
 		//draw a box as the backing for the progress bar, blank text inside
-		GUI.Box(new Rect(labelWidth, 0, barWidth, barHeight), "");
+		GUI.Box(new Rect(energyLabelWidth, 0, barWidth, barHeight), "");
 		
-		// create a label to draw the progress icon texture, use barProgress var
-		// to set its X position, 0 as the Y position and width and height of the texture used
-		GUI.Label(new Rect(labelWidth+barProgress, 0, progIcon.width, barHeight), progIcon);
+		// add energy texture label that works as an indicator of the remaining energy
+		GUI.Label(new Rect(energyLabelWidth+barProgress, 0, progIcon.width, barHeight), progIcon);
 		
+		// add energy text label at the leftmost position within the GUI.group
+		//GUI.Label(new Rect(energyLabelWidth+barWidth, barHeight, energyLabelWidth, barHeight), " Lives "+Globals.numLives.ToString());
+		GUI.Label(new Rect(0, barHeight, energyLabelWidth, barHeight), "Lives "+Globals.numLives.ToString());
+
 		GUI.EndGroup();
 	}
 }
