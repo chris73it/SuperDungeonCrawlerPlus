@@ -18,7 +18,7 @@ public class Follow : MonoBehaviour {
 			Vector3 fromToDir = target.transform.position - transform.position;
 			fromToDir.Normalize();
 			rigidbody.velocity = fromToDir * speed;
-			yield return new WaitForSeconds(interval);
+			yield return new WaitForSeconds(interval); 
 		}
 	}
 }

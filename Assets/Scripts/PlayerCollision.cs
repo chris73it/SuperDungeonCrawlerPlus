@@ -40,7 +40,7 @@ public class PlayerCollision : MonoBehaviour {
 			Globals.playerEnergy = 100f;
 			Application.LoadLevel(Globals.currentLevel);
 		} else {
-			Application.LoadLevel("Dead_Level");
+			Application.LoadLevel("Dead_Level"); 
 		}
 	}
 }

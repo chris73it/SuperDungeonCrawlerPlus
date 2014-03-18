@@ -42,7 +42,7 @@ public class HUD : MonoBehaviour {
 		
 		// add score text label at the intermediate position within the GUI.group
 		//GUI.Label(new Rect(energyLabelWidth+barWidth, barHeight, energyLabelWidth, barHeight), " Lives "+Globals.numLives.ToString());
-		GUI.Label(new Rect(0, barHeight, 2*energyLabelWidth, barHeight), "Score  "+Globals.score.ToString());
+		GUI.Label(new Rect(0, barHeight, 2*energyLabelWidth, barHeight), "Score  "+Globals.score.ToString()); 
 
 		// add energy text label at the lowest position within the GUI.group
 		//GUI.Label(new Rect(energyLabelWidth+barWidth, barHeight, energyLabelWidth, barHeight), " Lives "+Globals.numLives.ToString());

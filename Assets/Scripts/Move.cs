@@ -63,7 +63,7 @@ public class Move : MonoBehaviour {
 				GameObject bullet4 = Instantiate(refBullet, transform.position + 1 * speedDir4, transform.rotation) as GameObject;
 				bullet4.rigidbody.velocity = speedDir4 * bulletSpeed;
 				GameObject bullet5 = Instantiate(refBullet, transform.position + 1 * speedDir5, transform.rotation) as GameObject;
-				bullet5.rigidbody.velocity = speedDir5 * bulletSpeed;
+				bullet5.rigidbody.velocity = speedDir5 * bulletSpeed; 
 			}
 		}
 	}

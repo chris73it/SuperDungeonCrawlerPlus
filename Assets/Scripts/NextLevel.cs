@@ -34,6 +34,6 @@ public class NextLevel : MonoBehaviour {
 			yield return new WaitForSeconds(0.016f);
 		}
 		PickUpKey.gotKey = false;
-		Application.LoadLevel(++Globals.currentLevel);
+		Application.LoadLevel(++Globals.currentLevel); 
 	}
 }

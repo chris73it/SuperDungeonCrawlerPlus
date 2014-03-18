@@ -10,7 +10,7 @@ public class PickUpTreasure : MonoBehaviour {
 		if (collision.gameObject.tag == collidedTo)
 		{
 			Globals.score += 10;
-			Destroy(gameObject);
+			Destroy(gameObject); 
 		}
 	}
 }

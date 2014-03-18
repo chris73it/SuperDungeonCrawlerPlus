@@ -12,7 +12,7 @@ public class PickUpKey : MonoBehaviour {
 		if (collision.gameObject.tag == collidedTo)
 		{
 			gotKey = true;
-			Destroy (gameObject);
+			Destroy (gameObject); 
 		}
 	}
 }

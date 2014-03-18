@@ -23,7 +23,7 @@ public class Shortcuts : MonoBehaviour {
 		} else if (Input.GetKeyDown("2")) {
 			weaponType = 2;
 		} if (Input.GetKeyDown("3")) {
-			weaponType = 3;
+			weaponType = 3; 
 		}
 	}
 }

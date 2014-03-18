@@ -25,7 +25,7 @@ public class Spawner : MonoBehaviour {
 				newPosition3D.z += newPosition2D.y;
 				Instantiate(creature, newPosition3D, transform.rotation);
 			}
-			yield return new WaitForSeconds(interval);
+			yield return new WaitForSeconds(interval); 
 		}
 	}
 }
