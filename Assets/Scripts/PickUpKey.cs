@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PickUp : MonoBehaviour {
+public class PickUpKey : MonoBehaviour {
 
 	static public bool gotKey = false;
 

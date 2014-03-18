@@ -36,7 +36,7 @@ public class PlayerCollision : MonoBehaviour {
 			yield return new WaitForSeconds(0.016f);
 		}
 		if (--Globals.numLives > 0) {
-			PickUp.gotKey = false;
+			PickUpKey.gotKey = false;
 			Globals.playerEnergy = 100f;
 			Application.LoadLevel(Globals.currentLevel);
 		} else {

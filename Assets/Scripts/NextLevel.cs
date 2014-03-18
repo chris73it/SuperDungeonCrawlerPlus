@@ -10,7 +10,7 @@ public class NextLevel : MonoBehaviour {
 	void OnCollisionEnter (Collision collision) {
 		Debug.Log ("OnCollisionEnter: " + collision.gameObject.tag);
 
-		if (PickUp.gotKey == false) { return;  }
+		if (PickUpKey.gotKey == false) { return;  }
 
 		if (collision.gameObject.tag == collidedWith)
 		{
@@ -33,7 +33,7 @@ public class NextLevel : MonoBehaviour {
 			collision.rigidbody.velocity = fromToDir * speed;
 			yield return new WaitForSeconds(0.016f);
 		}
-		PickUp.gotKey = false;
+		PickUpKey.gotKey = false;
 		Application.LoadLevel(++Globals.currentLevel);
 	}
 }

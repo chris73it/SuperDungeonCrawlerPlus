@@ -29,7 +29,7 @@ public class HUD : MonoBehaviour {
 	void OnGUI() {
 		// create a GUI group the width of the bar and twice its height
 		// in order to leave room for 'Start' and 'End' text under the bar
-		GUI.BeginGroup(new Rect (10, 10, 2*energyLabelWidth+barWidth, 2*barHeight));
+		GUI.BeginGroup(new Rect (10, 10, 2*energyLabelWidth+barWidth, 3*barHeight));
 		
 		// add energy text label at the leftmost position within the GUI.group
 		GUI.Label(new Rect(0, 0, energyLabelWidth, barHeight), "Energy");
@@ -40,9 +40,13 @@ public class HUD : MonoBehaviour {
 		// add energy texture label that works as an indicator of the remaining energy
 		GUI.Label(new Rect(energyLabelWidth+barProgress, 0, progIcon.width, barHeight), progIcon);
 		
-		// add energy text label at the leftmost position within the GUI.group
+		// add score text label at the intermediate position within the GUI.group
 		//GUI.Label(new Rect(energyLabelWidth+barWidth, barHeight, energyLabelWidth, barHeight), " Lives "+Globals.numLives.ToString());
-		GUI.Label(new Rect(0, barHeight, energyLabelWidth, barHeight), "Lives "+Globals.numLives.ToString());
+		GUI.Label(new Rect(0, barHeight, 2*energyLabelWidth, barHeight), "Score  "+Globals.score.ToString());
+
+		// add energy text label at the lowest position within the GUI.group
+		//GUI.Label(new Rect(energyLabelWidth+barWidth, barHeight, energyLabelWidth, barHeight), " Lives "+Globals.numLives.ToString());
+		GUI.Label(new Rect(0, 2*barHeight, 2*energyLabelWidth, barHeight), "Lives   "+Globals.numLives.ToString());
 
 		GUI.EndGroup();
 	}

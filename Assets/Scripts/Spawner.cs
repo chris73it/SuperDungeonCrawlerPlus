@@ -4,9 +4,10 @@ using System.Collections;
 public class Spawner : MonoBehaviour {
 
 	public float interval;
-	public GameObject target;
 	public GameObject creature;
 	public float minDistance;
+
+	GameObject target;
 
 	void Start () {
 		target = GameObject.Find("Player");
