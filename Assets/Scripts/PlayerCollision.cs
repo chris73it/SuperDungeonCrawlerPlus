@@ -35,12 +35,13 @@ public class PlayerCollision : MonoBehaviour {
 
 			yield return new WaitForSeconds(0.016f);
 		}
+		Globals.playerEnergy = 100f;
 		if (--Globals.numLives > 0) {
 			PickUpKey.gotKey = false;
-			Globals.playerEnergy = 100f;
 			Application.LoadLevel(Globals.currentLevel);
 		} else {
-			Application.LoadLevel("Dead_Level"); 
+			/*FIXME*/ Globals.currentLevel = 0; // main menu
+			Application.LoadLevel("Fail_Level"); // NOTE: the fail level loads the main menu
 		}
 	}
 }

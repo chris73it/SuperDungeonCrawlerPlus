@@ -10,6 +10,10 @@ public class Move : MonoBehaviour {
 
 	private Vector3 lastSpeed = new Vector3(0,0,-1);
 
+	void Start() {
+		renderer.material.color = Globals.playerColor;
+	}
+
 	// Update is called once per frame
 	void Update () {
 

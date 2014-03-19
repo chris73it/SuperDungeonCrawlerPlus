@@ -39,14 +39,14 @@ public class HUD : MonoBehaviour {
 		
 		// add energy texture label that works as an indicator of the remaining energy
 		GUI.Label(new Rect(energyLabelWidth+barProgress, 0, progIcon.width, barHeight), progIcon);
-		
-		// add score text label at the intermediate position within the GUI.group
-		//GUI.Label(new Rect(energyLabelWidth+barWidth, barHeight, energyLabelWidth, barHeight), " Lives "+Globals.numLives.ToString());
-		GUI.Label(new Rect(0, barHeight, 2*energyLabelWidth, barHeight), "Score  "+Globals.score.ToString()); 
 
 		// add energy text label at the lowest position within the GUI.group
 		//GUI.Label(new Rect(energyLabelWidth+barWidth, barHeight, energyLabelWidth, barHeight), " Lives "+Globals.numLives.ToString());
-		GUI.Label(new Rect(0, 2*barHeight, 2*energyLabelWidth, barHeight), "Lives   "+Globals.numLives.ToString());
+		GUI.Label(new Rect(0, barHeight, 2*energyLabelWidth, barHeight), "Lives   "+Globals.numLives.ToString());
+		
+		// add score text label at the intermediate position within the GUI.group
+		//GUI.Label(new Rect(energyLabelWidth+barWidth, barHeight, energyLabelWidth, barHeight), " Lives "+Globals.numLives.ToString());
+		GUI.Label(new Rect(0, 2*barHeight, 2*energyLabelWidth, barHeight), "Score  "+Globals.score.ToString()); 
 
 		GUI.EndGroup();
 	}
