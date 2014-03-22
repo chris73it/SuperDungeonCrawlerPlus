@@ -14,8 +14,9 @@ public class Follow : MonoBehaviour {
 	}
 	
 	IEnumerator FollowTarget () {
+		Vector3 fromToDir;
 		for (;;) {
-			Vector3 fromToDir = target.transform.position - transform.position;
+			fromToDir = target.transform.position - transform.position;
 			fromToDir.Normalize();
 			rigidbody.velocity = fromToDir * speed;
 			yield return new WaitForSeconds(interval); 

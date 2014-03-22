@@ -11,10 +11,15 @@ public class PlayerCollision : MonoBehaviour {
 		{
 			//TODO: push the enemy in the opposite direction of the enemy's motion
 
-			Globals.playerEnergy -= 10f;
-			if (Globals.playerEnergy <= 0f) {
-				Globals.playerEnergy = 0f;
-				StartCoroutine("FlyToHeavenWhileFading");
+			if (Globals.playerEnergy > 0f) {
+				Globals.playerEnergy -= 10f;
+				if (Globals.playerEnergy <= 0f) {
+					Globals.playerEnergy = 0f;
+					--Globals.numLives;
+				}
+				if (Globals.playerEnergy == 0f) {
+					StartCoroutine("FlyToHeavenWhileFading");
+				}
 			}
 		}
 	}
@@ -35,13 +40,14 @@ public class PlayerCollision : MonoBehaviour {
 
 			yield return new WaitForSeconds(0.016f);
 		}
-		Globals.playerEnergy = 100f;
-		if (--Globals.numLives > 0) {
-			PickUpKey.gotKey = false;
-			Application.LoadLevel(Globals.currentLevel);
+		Debug.Log ("Globals.numLives: " + Globals.numLives);
+		if (Globals.numLives == 0) {
+			Application.LoadLevel("Fail_Screen");
 		} else {
-			/*FIXME*/ Globals.currentLevel = 0; // main menu
-			Application.LoadLevel("Fail_Level"); // NOTE: the fail level loads the main menu
+			PickUpBlueKey.gotBlueKey = false; // FIXME
+			PickUpRedKey.gotRedKey = false; // FIXME
+			PickUpGreenKey.gotGreenKey = false; // FIXME
+			Application.LoadLevel(Globals.currentLevel);
 		}
 	}
 }

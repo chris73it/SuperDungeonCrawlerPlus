@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PickUpKey : MonoBehaviour {
+public class PickUpBlueKey : MonoBehaviour {
 
-	static public bool gotKey = false;
+	static public bool gotBlueKey = false;
 
 	public string collidedTo;
 
@@ -11,7 +11,7 @@ public class PickUpKey : MonoBehaviour {
 		Debug.Log ("OnCollisionEnter: " + collision.gameObject.tag + " - " + collidedTo);
 		if (collision.gameObject.tag == collidedTo)
 		{
-			gotKey = true;
+			gotBlueKey = true;
 			Destroy (gameObject); 
 		}
 	}

@@ -1,18 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NextLevel : MonoBehaviour {
-	
-	public string collidedWith;
+public class NextBlueLevel : MonoBehaviour {
 
-	private float speed = 2.5f;
+	GameObject target;
+	float speed = 2.5f;
+
+	void Start() {
+		target = GameObject.Find("Player");
+	}
 
 	void OnCollisionEnter (Collision collision) {
-		Debug.Log ("OnCollisionEnter: " + collision.gameObject.tag);
 
-		if (PickUpKey.gotKey == false) { return;  }
+		if (PickUpBlueKey.gotBlueKey == false) { return;  }
 
-		if (collision.gameObject.tag == collidedWith)
+		if (collision.gameObject == target)
 		{
 			StartCoroutine("CenterTarget", collision);
 		}
@@ -33,7 +35,8 @@ public class NextLevel : MonoBehaviour {
 			collision.rigidbody.velocity = fromToDir * speed;
 			yield return new WaitForSeconds(0.016f);
 		}
-		PickUpKey.gotKey = false;
-		Application.LoadLevel(++Globals.currentLevel); 
+		PickUpBlueKey.gotBlueKey = false;
+		Globals.currentLevel += 3;
+		Application.LoadLevel(Globals.currentLevel); 
 	}
 }

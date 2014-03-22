@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MainMenu : MonoBehaviour {
+public class FailMenu : MonoBehaviour {
 	
 	void OnGUI() {
 		
@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour {
 		GUI.color = Color.green;
 		if (GUI.Button(new Rect((Screen.width-Globals.MENU_BUTTON_WIDTH)/2, 450, Globals.MENU_BUTTON_WIDTH, Globals.MENU_BUTTON_HEIGHT), "Play")) {
 			Debug.Log("Clicked the Play button");
-			Globals.currentLevel = 2;
+			Globals.currentLevel = 2; // when in the fail screen, the level is much greater than 1, so it needs "resetting"
 			Application.LoadLevel(Globals.currentLevel); // go to character selection screen
 		}
 		

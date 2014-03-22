@@ -1,22 +1,27 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MainMenu.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/NextGreenLevel.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerCollision.cs" Line="10" Column="46" />
-      <File FileName="Assets/Scripts/NextLevel.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayerCollision.cs" Line="47" Column="17" />
       <File FileName="Assets/Scripts/PickUpTreasure.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/HUD.cs" Line="45" Column="25" />
-      <File FileName="Assets/Scripts/Globals.cs" Line="11" Column="34" />
+      <File FileName="Assets/Scripts/HUD.cs" Line="1" Column="19" />
+      <File FileName="Assets/Scripts/Globals.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/CollisionDetection.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PlayerCollision.cs" Line="33" Column="30" />
-      <File FileName="Assets/Scripts/PickUpKey.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Spawner.cs" Line="10" Column="19" />
+      <File FileName="Assets/Scripts/Spawner.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/DeleteOnStop.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Follow.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Move.cs" Line="14" Column="49" />
+      <File FileName="Assets/Scripts/Follow.cs" Line="19" Column="4" />
+      <File FileName="Assets/Scripts/Move.cs" Line="25" Column="68" />
       <File FileName="Assets/Scripts/Shortcuts.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/MainMenu.cs" Line="10" Column="25" />
-      <File FileName="Assets/Scripts/CharSelMenu.cs" Line="12" Column="25" />
+      <File FileName="Assets/Scripts/CharSelMenu.cs" Line="15" Column="71" />
+      <File FileName="Assets/Scripts/Intro.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MainMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/FailMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PickUpRedKey.cs" Line="19" Column="1" />
+      <File FileName="Assets/Scripts/PickUpGreenKey.cs" Line="15" Column="11" />
+      <File FileName="Assets/Scripts/PickUpBlueKey.cs" Line="14" Column="11" />
+      <File FileName="Assets/Scripts/NextBlueLevel.cs" Line="36" Column="12" />
+      <File FileName="Assets/Scripts/NextRedLevel.cs" Line="15" Column="16" />
+      <File FileName="Assets/Scripts/NextGreenLevel.cs" Line="40" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

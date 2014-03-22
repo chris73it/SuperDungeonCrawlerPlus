@@ -16,7 +16,6 @@ public class Move : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
 		// Get the horizontal and vertical axis delta movements.
 		// By default they are mapped to the arrow keys.
 		// The value is in the range -1 to 1
