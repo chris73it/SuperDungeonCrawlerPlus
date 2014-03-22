@@ -29,24 +29,27 @@ public class HUD : MonoBehaviour {
 	void OnGUI() {
 		// create a GUI group the width of the bar and twice its height
 		// in order to leave room for 'Start' and 'End' text under the bar
-		GUI.BeginGroup(new Rect (10, 10, 2*energyLabelWidth+barWidth, 3*barHeight));
+		GUI.BeginGroup(new Rect (10, 10, 2*energyLabelWidth+barWidth, 4*barHeight));
 		
-		// add energy text label at the leftmost position within the GUI.group
-		GUI.Label(new Rect(0, 0, energyLabelWidth, barHeight), "Energy");
+		// add level text label at the very top position within the GUI.group
+		if (Globals.currentLevel >= Globals.LAST_LEVEL) {
+			GUI.Label(new Rect(0, 0, 2*energyLabelWidth, barHeight), "Level   " + (Globals.LAST_LEVEL-2));
+		} else {
+			GUI.Label(new Rect(0, 0, 2*energyLabelWidth, barHeight), "Level   " + (Globals.currentLevel-2).ToString());
+		}
 		
-		//draw a box as the backing for the progress bar, blank text inside
-		GUI.Box(new Rect(energyLabelWidth, 0, barWidth, barHeight), "");
-		
-		// add energy texture label that works as an indicator of the remaining energy
-		GUI.Label(new Rect(energyLabelWidth+barProgress, 0, progIcon.width, barHeight), progIcon);
-
-		// add energy text label at the lowest position within the GUI.group
-		//GUI.Label(new Rect(energyLabelWidth+barWidth, barHeight, energyLabelWidth, barHeight), " Lives "+Globals.numLives.ToString());
+		// add lives text label at the middle position within the GUI.group
 		GUI.Label(new Rect(0, barHeight, 2*energyLabelWidth, barHeight), "Lives   "+Globals.numLives.ToString());
+
+		// add energy text label at the leftmost position within the GUI.group
+		GUI.Label(new Rect(0, 2*barHeight, energyLabelWidth, barHeight), "Energy");
+		//draw a box as the backing for the progress bar, blank text inside
+		GUI.Box(new Rect(energyLabelWidth, 2*barHeight, barWidth, barHeight), "");
+		// add energy texture label that works as an indicator of the remaining energy
+		GUI.Label(new Rect(energyLabelWidth+barProgress, 2*barHeight, progIcon.width, barHeight), progIcon);
 		
-		// add score text label at the intermediate position within the GUI.group
-		//GUI.Label(new Rect(energyLabelWidth+barWidth, barHeight, energyLabelWidth, barHeight), " Lives "+Globals.numLives.ToString());
-		GUI.Label(new Rect(0, 2*barHeight, 2*energyLabelWidth, barHeight), "Score  "+Globals.score.ToString()); 
+		// add score text label at the bottom position within the GUI.group
+		GUI.Label(new Rect(0, 3*barHeight, 2*energyLabelWidth, barHeight), "Score  "+Globals.score.ToString()); 
 
 		GUI.EndGroup();
 	}
