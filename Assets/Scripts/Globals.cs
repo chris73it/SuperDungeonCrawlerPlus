@@ -5,6 +5,8 @@ public class Globals : MonoBehaviour {
 	public const int LAST_LEVEL = 2 + 6; // character screen is "level 2"
 	public const int INITIAL_LIVES = 1;
 	public const float INITIAL_ENERGY = 100f;
+	public const float CAMERA_DISTANCE = 15f;
+	public const int NEST_INITIAL_ENERGY = 50;
 	public const float MENU_BUTTON_WIDTH = 200f;
 	public const float MENU_BUTTON_HEIGHT = 50f;
 

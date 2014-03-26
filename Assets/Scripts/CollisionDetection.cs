@@ -10,7 +10,7 @@ public class CollisionDetection : MonoBehaviour {
 		if (collision.gameObject.tag == collidedTo)
 		{
 			Destroy(gameObject);
-			Destroy (collision.gameObject); 
+			Destroy (collision.gameObject);
 		}
 	}
 }

@@ -8,13 +8,12 @@ public class Move : MonoBehaviour {
 	public float bulletSpeed;
 	public GameObject refBullet;
 
-	private Vector3 lastSpeed = new Vector3(0,0,-1);
+	private Vector3 lastSpeed = new Vector3(0,0,1);
 
 	void Start() {
 		renderer.material.color = Globals.playerColor;
 	}
 
-	// Update is called once per frame
 	void Update () {
 		// Get the horizontal and vertical axis delta movements.
 		// By default they are mapped to the arrow keys.
@@ -24,8 +23,8 @@ public class Move : MonoBehaviour {
 		float translationZ = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 		transform.position += new Vector3(translationX, 0, translationZ);
 		
-		// Move camera to follow the player while staying at hight 15
-		cam.transform.position = new Vector3(transform.position.x, 15, transform.position.z-2);
+		// Move camera to follow the player while staying at the same distance
+		cam.transform.position = new Vector3(transform.position.x, Globals.CAMERA_DISTANCE, transform.position.z+3);
 
 		// Calculate the player direction
 		Vector3 speedDir = Vector3.ClampMagnitude(new Vector3(translationX, 0, translationZ), 1);
