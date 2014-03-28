@@ -1,35 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MainMenu.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EnterFromGreenWormHole.cs">
     <Files>
-      <File FileName="Assets/Scripts/KillNest.cs" Line="7" Column="1" />
-      <File FileName="Assets/Scripts/HUD.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PlayerCollision.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PickUpTreasure.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Globals.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/CollisionDetection.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Spawner.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/DeleteOnStop.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Follow.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Move.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Shortcuts.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/CharSelMenu.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Intro.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/MainMenu.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/FailMenu.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PickUpRedKey.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PickUpGreenKey.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/NextBlueLevel.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/NextRedLevel.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/NextGreenLevel.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/EnterFromBlueWormHole.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/EnterFromGreenWormHole.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/EnterFromRedWormHole.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PickUpPotion.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Spin.cs" Line="7" Column="1" />
-      <File FileName="Assets/Scripts/PickUpCrown.cs" Line="13" Column="58" />
-      <File FileName="Assets/Scripts/PickUpBlueKey.cs" Line="17" Column="3" />
+      <File FileName="Assets/Scripts/EnterFromGreenWormHole.cs" Line="7" Column="2" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
