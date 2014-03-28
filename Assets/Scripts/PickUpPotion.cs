@@ -10,6 +10,7 @@ public class PickUpPotion : MonoBehaviour {
 		if (collision.gameObject.tag == collidedTo)
 		{
 			Destroy (gameObject);
+			Globals.score += 50;
 			Globals.playerEnergy += 30f;
 			if (Globals.playerEnergy > 100f) {
 				Globals.playerEnergy = 100f;

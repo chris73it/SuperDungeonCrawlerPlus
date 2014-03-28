@@ -11,11 +11,11 @@ public class KillNest : MonoBehaviour {
 	{
 		if (collision.gameObject.tag == collidedTo)
 		{
-			Globals.score += 100;
 			Destroy(collision.gameObject);
 			Debug.Log("nestEnergy: " + nestEnergy);
 			if (--nestEnergy <= 0) {
 				Destroy(gameObject);
+				Globals.score += 100;
 			}
 		}
 	}
