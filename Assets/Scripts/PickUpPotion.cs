@@ -9,12 +9,19 @@ public class PickUpPotion : MonoBehaviour {
 		Debug.Log ("OnCollisionEnter: " + collision.gameObject.tag + " - " + collidedTo);
 		if (collision.gameObject.tag == collidedTo)
 		{
-			Destroy (gameObject);
+			audio.Play();
+			StartCoroutine("DeferredSuicide", gameObject);
 			Globals.score += 50;
 			Globals.playerEnergy += 30f;
 			if (Globals.playerEnergy > 100f) {
 				Globals.playerEnergy = 100f;
 			}
 		}
+	}
+
+	IEnumerator DeferredSuicide(GameObject potion) {
+		potion.transform.Translate(new Vector3(0,-10,0));
+		yield return new WaitForSeconds(2f);
+		Destroy(potion);
 	}
 }

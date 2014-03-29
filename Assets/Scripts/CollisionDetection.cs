@@ -9,8 +9,15 @@ public class CollisionDetection : MonoBehaviour {
 	{
 		if (collision.gameObject.tag == collidedTo)
 		{
-			Destroy(gameObject);
 			Destroy (collision.gameObject);
+			audio.Play();
+			StartCoroutine("DeferredSuicide", gameObject);
 		}
+	}
+	
+	IEnumerator DeferredSuicide(GameObject enemy) {
+		enemy.transform.Translate(new Vector3(0,-10,0));
+		yield return new WaitForSeconds(2f);
+		Destroy(enemy);
 	}
 }

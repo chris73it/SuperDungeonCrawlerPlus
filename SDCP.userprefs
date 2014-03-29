@@ -1,13 +1,29 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EnterFromGreenWormHole.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PickUpCrown.cs">
     <Files>
       <File FileName="Assets/Scripts/Globals.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/EnterFromGreenWormHole.cs" Line="7" Column="2" />
+      <File FileName="Assets/Scripts/EnterFromGreenWormHole.cs" Line="13" Column="14" />
+      <File FileName="Assets/Scripts/PickUpPinkKey.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Move.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PickUpPotion.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/NextBlueLevel.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/CollisionDetection.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/KillNest.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayerCollision.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/HUD.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/EnterFromPinkWormHole.cs" Line="13" Column="1" />
+      <File FileName="Assets/Scripts/PickUpCrown.cs" Line="14" Column="4" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True" selected="True" />
+        <State expanded="True">
+          <Node name="Assembly-CSharp" expanded="True">
+            <Node name="Scripts" expanded="True">
+              <Node name="PickUpCrown.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>

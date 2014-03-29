@@ -4,6 +4,24 @@ using System.Collections;
 public class PlayerCollision : MonoBehaviour {
 
 	public string collidedTo;
+	public AudioClip deathSound;
+
+	/*void Update() {
+		if (Globals.playerEnergy <= 0f) {
+			audio.PlayOneShot(deathSound, 1f);
+			StartCoroutine("FlyToHeavenWhileFading");
+		}
+		Debug.Log ("Globals.numLives: " + Globals.numLives);
+		if (Globals.numLives == 0) {
+			Application.LoadLevel("Fail_Screen");
+		} else {
+			PickUpBlueKey.gotBlueKey = false; // FIXME
+			PickUpRedKey.gotRedKey = false; // FIXME
+			PickUpGreenKey.gotGreenKey = false; // FIXME
+			PickUpPinkKey.gotPinkKey = false; // FIXME
+			Application.LoadLevel(Globals.currentLevel);
+		}
+	}*/
 
 	void OnCollisionEnter (Collision collision)
 	{
@@ -18,6 +36,7 @@ public class PlayerCollision : MonoBehaviour {
 					--Globals.numLives;
 				}
 				if (Globals.playerEnergy == 0f) {
+					audio.PlayOneShot(deathSound, 1f);
 					StartCoroutine("FlyToHeavenWhileFading");
 				}
 			}
@@ -47,6 +66,7 @@ public class PlayerCollision : MonoBehaviour {
 			PickUpBlueKey.gotBlueKey = false; // FIXME
 			PickUpRedKey.gotRedKey = false; // FIXME
 			PickUpGreenKey.gotGreenKey = false; // FIXME
+			PickUpPinkKey.gotPinkKey = false; // FIXME
 			Application.LoadLevel(Globals.currentLevel);
 		}
 	}

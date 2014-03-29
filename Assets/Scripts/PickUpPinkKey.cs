@@ -11,8 +11,6 @@ public class PickUpPinkKey : MonoBehaviour {
 
 	void Start() {
 		centralPillar = GameObject.Find("CentralPillar");
-		if (centralPillar) Debug.Log("centralPillar is NOT NULL");
-		else Debug.Log("centralPillar is NULL");
 	}
 
 	void OnCollisionEnter (Collision collision) {

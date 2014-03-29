@@ -14,7 +14,7 @@ public class HUD : MonoBehaviour {
 	float energyLabelWidth = 48f;
 	
 	// energy
-	float maxEnergy = 100f + 1f; // the +1f makes playerEnergy still visible when it is 100f
+	float maxEnergy = Globals.INITIAL_ENERGY + 1f; // the +1f makes playerEnergy still visible when it is 100f
 	float barWidthOverMaxEnergy;
 
 	void Start() {
