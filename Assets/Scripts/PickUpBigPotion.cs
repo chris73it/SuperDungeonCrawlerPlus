@@ -12,9 +12,9 @@ public class PickUpPotion : MonoBehaviour {
 			audio.Play();
 			StartCoroutine("DeferredSuicide", gameObject);
 			Globals.score += 200;
-			Globals.playerEnergy += 30f;
-			if (Globals.playerEnergy > 100f) {
-				Globals.playerEnergy = 100f;
+			Globals.playerEnergy += Globals.INITIAL_ENERGY *3 /10;
+			if (Globals.playerEnergy > Globals.INITIAL_ENERGY) {
+				Globals.playerEnergy = Globals.INITIAL_ENERGY;
 			}
 		}
 	}

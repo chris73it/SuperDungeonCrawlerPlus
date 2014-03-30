@@ -13,9 +13,6 @@ public class PickUpBigPotion : MonoBehaviour {
 			StartCoroutine("DeferredSuicide", gameObject);
 			Globals.score += 50;
 			Globals.playerEnergy = Globals.INITIAL_ENERGY;
-			if (Globals.playerEnergy > 100f) {
-				Globals.playerEnergy = 100f;
-			}
 		}
 	}
 
