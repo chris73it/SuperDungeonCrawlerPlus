@@ -10,7 +10,8 @@ public class EnterFromRedWormHole : MonoBehaviour {
 		Debug.Log("OnCollisionEnter: " + collision.gameObject.tag + " - " + collidedTo);
 		if (collision.gameObject.tag == collidedTo)
 		{
-			collision.gameObject.transform.position = toRedWormHole.transform.position;
+//			collision.gameObject.transform.position = toRedWormHole.transform.position;
+			Application.LoadLevel(++Globals.currentLevel);
 		}
 	}
 }

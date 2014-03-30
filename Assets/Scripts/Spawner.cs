@@ -14,7 +14,7 @@ public class Spawner : MonoBehaviour {
 		StartCoroutine("Spawn");
 	}
 
-	IEnumerator Spawn () {
+	IEnumerator Spawn() {
 		for (;;) {
 			float distance = (transform.position - target.transform.position).magnitude;
 			if (distance < minDistance) {

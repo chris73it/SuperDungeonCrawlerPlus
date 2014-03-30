@@ -20,7 +20,7 @@ those that remained were quickly turned to Naughts to do the bidding of the Soul
 		if (GUI.Button(new Rect((Screen.width-Globals.MENU_BUTTON_WIDTH)/2, 450, Globals.MENU_BUTTON_WIDTH, Globals.MENU_BUTTON_HEIGHT), "Play")) {
 			Debug.Log("Clicked the Play button");
 			Globals.currentLevel = 2; // skip the main menu
-			Application.LoadLevel(Globals.currentLevel); // go to character selection screen (NOTE: main menu is 0)
+			Application.LoadLevel(Globals.currentLevel); // go to character selection screen
 		}
 		
 		GUI.color = Color.yellow;

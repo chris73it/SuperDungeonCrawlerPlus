@@ -11,7 +11,8 @@ public class EnterFromGreenWormHole : MonoBehaviour {
 		if (collision.gameObject.tag == collidedTo)
 		{
 			audio.Play();
-			collision.gameObject.transform.position = toGreenWormHole.transform.position;
+//			collision.gameObject.transform.position = toGreenWormHole.transform.position;
+			Application.LoadLevel(++Globals.currentLevel);
 		}
 	}
 }
