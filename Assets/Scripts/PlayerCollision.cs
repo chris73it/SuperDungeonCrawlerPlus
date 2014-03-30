@@ -67,6 +67,7 @@ public class PlayerCollision : MonoBehaviour {
 			PickUpRedKey.gotRedKey = false; // FIXME
 			PickUpGreenKey.gotGreenKey = false; // FIXME
 			PickUpPinkKey.gotPinkKey = false; // FIXME
+			Globals.playerEnergy = Globals.INITIAL_ENERGY;
 			Application.LoadLevel(Globals.currentLevel);
 		}
 	}
