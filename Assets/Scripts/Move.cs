@@ -31,7 +31,7 @@ public class Move : MonoBehaviour {
 		}
 
 		// Move camera to follow the player while staying at the same distance
-		cam.transform.position = new Vector3(transform.position.x, Globals.CAMERA_DISTANCE-3, transform.position.z-1);
+		cam.transform.position = new Vector3(transform.position.x, Globals.CAMERA_DISTANCE, transform.position.z-1);
 
 		// Calculate the player direction
 		Vector3 speedDir = Vector3.ClampMagnitude(new Vector3(translationX, 0, translationZ), 1);
