@@ -16,6 +16,7 @@ public class NextRedLevel : MonoBehaviour {
 
 		if (collision.gameObject == target)
 		{
+			audio.Play();
 			StartCoroutine("CenterTarget", collision);
 		}
 	}
@@ -36,6 +37,6 @@ public class NextRedLevel : MonoBehaviour {
 			yield return new WaitForSeconds(0.016f);
 		}
 		PickUpRedKey.gotRedKey = false;
-		Application.LoadLevel(++Globals.currentLevel); 
+		Application.LoadLevel("Win_Screen");
 	}
 }

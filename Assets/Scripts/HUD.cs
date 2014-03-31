@@ -34,7 +34,7 @@ public class HUD : MonoBehaviour {
 		// add level text label at the very top position within the GUI.group
 		if (Globals.currentLevel >= Globals.LAST_LEVEL) {
 			GUI.Label(new Rect(0, 0, 2*energyLabelWidth, barHeight), "Level   " + (Globals.LAST_LEVEL-2));
-		} else {
+		} else if (Globals.currentLevel >= 0) {
 			GUI.Label(new Rect(0, 0, 2*energyLabelWidth, barHeight), "Level   " + (Globals.currentLevel-2).ToString());
 		}
 		

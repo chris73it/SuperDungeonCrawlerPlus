@@ -13,7 +13,7 @@ public class CreditsMenu : MonoBehaviour {
 
 					float distanceBetweenButtons = (Screen.width-3*Globals.MENU_BUTTON_WIDTH)/4;
 
-					GUI.color = Color.magenta;
+					GUI.color = Color.white;
 				if (GUI.Button(new Rect(distanceBetweenButtons, 350, Globals.MENU_BUTTON_WIDTH, Globals.MENU_BUTTON_HEIGHT), "Brianna Grizzell")) {
 						clickedBri = true;
 						clickedRoss = false;
@@ -42,14 +42,14 @@ public class CreditsMenu : MonoBehaviour {
 					}
 
 				if (clickedBri == true) {
-						GUI.color = Color.magenta;
+			GUI.color = Color.white;
 						GUI.TextField(new Rect(distanceBetweenButtons, 150, Globals.MENU_BUTTON_WIDTH, Globals.MENU_BUTTON_HEIGHT), "Logo and character drawings");
 					} else if (clickedRoss == true) {
 						GUI.color = Color.yellow;
 						GUI.TextField(new Rect(2*distanceBetweenButtons+Globals.MENU_BUTTON_WIDTH, 150, Globals.MENU_BUTTON_WIDTH, Globals.MENU_BUTTON_HEIGHT), "Concept and level design");
 					} else if (clickedChris == true) {
 						GUI.color = Color.cyan;
-						GUI.TextField(new Rect(3*distanceBetweenButtons+2*Globals.MENU_BUTTON_WIDTH, 150, Globals.MENU_BUTTON_WIDTH, Globals.MENU_BUTTON_HEIGHT), "Code design and implementation");
+						GUI.TextField(new Rect(3*distanceBetweenButtons+2*Globals.MENU_BUTTON_WIDTH, 150, Globals.MENU_BUTTON_WIDTH, Globals.MENU_BUTTON_HEIGHT), "Design and implementation");
 			}
 			GUI.EndGroup();
 		}

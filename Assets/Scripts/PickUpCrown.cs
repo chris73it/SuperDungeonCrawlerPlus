@@ -10,7 +10,7 @@ public class PickUpCrown : MonoBehaviour {
 		if (collision.gameObject.tag == collidedTo)
 		{
 			Destroy(gameObject);
-			Application.LoadLevel("Win_Screen");
+			Globals.score += 500;
 		}
 	}
 }

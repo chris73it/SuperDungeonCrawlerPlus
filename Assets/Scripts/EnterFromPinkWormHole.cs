@@ -10,6 +10,7 @@ public class EnterFromPinkWormHole : MonoBehaviour {
 		Debug.Log("OnCollisionEnter: " + collision.gameObject.tag + " - " + collidedTo);
 		if (collision.gameObject.tag == collidedTo)
 		{
+			audio.Play();
 			collision.gameObject.transform.position = toPinkWormHole.transform.position;
 		}
 	}
