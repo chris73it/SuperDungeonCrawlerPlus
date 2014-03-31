@@ -11,10 +11,12 @@ public class Intro : MonoBehaviour {
 		
 		GUI.Box(new Rect((Screen.width/2-128),10,256,256), logo);
 		
-		GUI.Box(new Rect(0,300,Screen.width,75), @"Four Heroes are tasked with dispatching the evil that has overthrown Elna, the Cloud City.
-Among the clouds lived the peaceful and just Ispi, a fairy like race.
-Few managed to escape the wrath of the Soul Smith;
-those that remained were quickly turned to Naughts to do the bidding of the Soul Smith.");
+		GUI.Box(new Rect(0,300,Screen.width,100), @"Four Heroes are tasked with dispatching the wretched Soul Smith.
+He has overthrown Elna, city in the clouds and home of the peaceful Ispi.
+Few of these faeries managed to escape the Soul Smith.
+Those that remained have been turned into soulless Naughts, hollow beings to do his bidding.
+
+Will you end the tyranny of the Soul Smith? Choose your Hero, and may Heaven Fall…");
 		
 		GUI.color = Color.green;
 		if (GUI.Button(new Rect((Screen.width-Globals.MENU_BUTTON_WIDTH)/2, 450, Globals.MENU_BUTTON_WIDTH, Globals.MENU_BUTTON_HEIGHT), "Play")) {
