@@ -12,7 +12,13 @@ public class PickUpRedKey : MonoBehaviour {
 		if (collision.gameObject.tag == collidedTo)
 		{
 			gotRedKey = true;
-			Destroy(gameObject); 
+			StartCoroutine("DeferredSuicide", gameObject);
 		}
+	}
+	
+	IEnumerator DeferredSuicide(GameObject key) {
+		key.transform.Translate(new Vector3(0,-10,0));
+		yield return new WaitForSeconds(2f);
+		Destroy(key);
 	}
 }

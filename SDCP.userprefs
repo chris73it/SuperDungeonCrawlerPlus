@@ -1,34 +1,43 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/HUD.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PickUpPinkKey.cs">
     <Files>
-      <File FileName="Assets/Scripts/PickUpPotion.cs" Line="15" Column="50" />
+      <File FileName="Assets/Scripts/PickUpTreasure.cs" Line="21" Column="21" />
+      <File FileName="Assets/Scripts/PickUpPotion.cs" Line="13" Column="18" />
       <File FileName="Assets/Scripts/Move.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Globals.cs" Line="5" Column="2" />
+      <File FileName="Assets/Scripts/Globals.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/EnterFromGreenWormHole.cs" Line="18" Column="2" />
-      <File FileName="Assets/Scripts/PickUpPinkKey.cs" Line="13" Column="52" />
+      <File FileName="Assets/Scripts/PickUpPinkKey.cs" Line="30" Column="18" />
       <File FileName="Assets/Scripts/NextBlueLevel.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/CollisionDetection.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/KillNest.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/PlayerCollision.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/HUD.cs" Line="49" Column="1" />
-      <File FileName="Assets/Scripts/EnterFromPinkWormHole.cs" Line="13" Column="17" />
-      <File FileName="Assets/Scripts/PickUpCrown.cs" Line="13" Column="25" />
-      <File FileName="Assets/Scripts/CreditsMenu.cs" Line="52" Column="147" />
+      <File FileName="Assets/Scripts/HUD.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/EnterFromPinkWormHole.cs" Line="15" Column="1" />
+      <File FileName="Assets/Scripts/PickUpCrown.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/CreditsMenu.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/DeleteOnStop.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PickUpBigPotion.cs" Line="15" Column="48" />
-      <File FileName="Assets/Scripts/Intro.cs" Line="23" Column="84" />
-      <File FileName="Assets/Scripts/CharSelMenu.cs" Line="45" Column="22" />
-      <File FileName="Assets/Scripts/Spawner.cs" Line="30" Column="3" />
-      <File FileName="Assets/Scripts/EnterFromBlueWormHole.cs" Line="14" Column="28" />
-      <File FileName="Assets/Scripts/EnterFromRedWormHole.cs" Line="14" Column="50" />
+      <File FileName="Assets/Scripts/PickUpBigPotion.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Intro.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/CharSelMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Spawner.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/EnterFromBlueWormHole.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/EnterFromRedWormHole.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/PickUpBlueKey.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/NextRedLevel.cs" Line="40" Column="1" />
+      <File FileName="Assets/Scripts/NextRedLevel.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/PickUpRedKey.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Shortcuts.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PickUpTreasure.cs" Line="23" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True" selected="True" />
+        <State expanded="True">
+          <Node name="Assembly-CSharp" expanded="True">
+            <Node name="Scripts" expanded="True">
+              <Node name="PickUpPinkKey.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>

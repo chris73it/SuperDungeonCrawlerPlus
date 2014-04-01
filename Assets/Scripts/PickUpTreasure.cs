@@ -9,8 +9,15 @@ public class PickUpTreasure : MonoBehaviour {
 	{
 		if (collision.gameObject.tag == collidedTo)
 		{
-			Globals.score += 10;
-			Destroy(gameObject); 
+			audio.Play();
+			StartCoroutine("DeferredSuicide", gameObject);
+			Globals.score += 70;
 		}
+	}
+	
+	IEnumerator DeferredSuicide(GameObject treasure) {
+		treasure.transform.Translate(new Vector3(0,-10,0));
+		yield return new WaitForSeconds(2f);
+		Destroy(treasure);
 	}
 }
