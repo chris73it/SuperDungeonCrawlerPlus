@@ -3,24 +3,24 @@ using System.Collections;
 
 public class HUD : MonoBehaviour {
 	// drag a texture as the icon to move on the progress bar
-	public Texture progIcon;
+	public Texture vertBar;
 	
 	// GUI bar width height and progress
 	float barWidth = 128f;
 	float barHeight = 24f;
 	float barProgress;
-
+	
 	// label
 	float energyLabelWidth = 48f;
 	
 	// energy
 	float maxEnergy = Globals.INITIAL_ENERGY + 1f; // the +1f makes playerEnergy still visible when it is 100f
 	float barWidthOverMaxEnergy;
-
+	
 	void Start() {
 		barWidthOverMaxEnergy = barWidth / maxEnergy;
 	}
-
+	
 	void Update() {
 		//turn the playerDist into the scale of barWidth
 		barProgress = Globals.playerEnergy * barWidthOverMaxEnergy;
@@ -40,17 +40,17 @@ public class HUD : MonoBehaviour {
 		
 		// add lives text label at the middle position within the GUI.group
 		GUI.Label(new Rect(0, barHeight, 2*energyLabelWidth, barHeight), "Lives   "+Globals.numLives.ToString());
-
+		
 		// add energy text label at the leftmost position within the GUI.group
 		GUI.Label(new Rect(0, 2*barHeight, energyLabelWidth, barHeight), "Energy");
 		//draw a box as the backing for the progress bar, blank text inside
 		GUI.Box(new Rect(energyLabelWidth, 2*barHeight, barWidth, barHeight), "");
 		// add energy texture label that works as an indicator of the remaining energy
-		GUI.Label(new Rect(energyLabelWidth+barProgress, 2*barHeight, progIcon.width, barHeight), progIcon);
+		GUI.Label(new Rect(energyLabelWidth+barProgress, 2*barHeight, vertBar.width, barHeight), vertBar);
 		
 		// add score text label at the bottom position within the GUI.group
 		GUI.Label(new Rect(0, 3*barHeight, 2*energyLabelWidth, barHeight), "Score  "+Globals.score.ToString()); 
-
+		
 		GUI.EndGroup();
 	}
 }

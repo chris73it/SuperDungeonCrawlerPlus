@@ -6,7 +6,7 @@ public class Globals : MonoBehaviour {
 	public const int INITIAL_LIVES = 2;
 	public const float INITIAL_ENERGY = 300f;
 	public const float CAMERA_DISTANCE = 13f;
-	public const int NEST_INITIAL_ENERGY = 40;
+	public const int NEST_INITIAL_ENERGY = 30;
 	public const float MINIMUM_HEIGHT = -10; // below this height player dies
 	public const float MENU_BUTTON_WIDTH = 200f;
 	public const float MENU_BUTTON_HEIGHT = 50f;

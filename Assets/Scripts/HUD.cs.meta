@@ -1,8 +1,9 @@
 fileFormatVersion: 2
-guid: 7860218603f134851a56493e1913c468
+guid: 2a7167f3f507a4483bfe2c785fa47158
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - vertBar: {fileID: 2800000, guid: ca0d6f070bea444ef83923a4bc501c2e, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
