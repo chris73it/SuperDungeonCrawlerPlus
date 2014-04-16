@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CollisionDetection : MonoBehaviour {
+public class CollisionDetectionSuper : MonoBehaviour {
 
 	public string collidedTo;
 
-	int enemyEnergy = Globals.ENEMY_INITIAL_ENERGY;
+	int enemyEnergy = Globals.SUPER_ENEMY_INITIAL_ENERGY;
 
 	void OnCollisionEnter(Collision collision)
 	{
