@@ -5,8 +5,8 @@ public class Follow : MonoBehaviour {
 
 	public float speed;
 
-	private GameObject target;
-	private float interval = 0.1f;
+	GameObject target;
+	const float interval = 0.1f;
 	
 	void Start () {
 		target = GameObject.Find("Player");

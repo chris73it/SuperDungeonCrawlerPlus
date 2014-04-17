@@ -11,6 +11,7 @@ public class PickUpRedKey : MonoBehaviour {
 		Debug.Log ("OnCollisionEnter: " + collision.gameObject.tag + " - " + collidedTo);
 		if (collision.gameObject.tag == collidedTo)
 		{
+			audio.Play();
 			gotRedKey = true;
 			StartCoroutine("DeferredSuicide", gameObject);
 		}
