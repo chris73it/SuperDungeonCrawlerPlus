@@ -13,6 +13,7 @@ public class Move : MonoBehaviour {
 
 	void Start() {
 		renderer.material.color = Globals.playerColor;
+		refBullet.renderer.material.color = Globals.playerColor;
 	}
 
 	void Update () {
