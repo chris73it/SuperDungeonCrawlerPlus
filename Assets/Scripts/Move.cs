@@ -51,22 +51,25 @@ public class Move : MonoBehaviour {
 			lastSpeed = speedDir;
 		}
 
-		// Reset fire power when the Z button is not pressed
+		// Reset fire power when the Z button is not pressed (or released)
 		if (Input.GetKeyUp(KeyCode.Z)) {
 
 			if (Globals.fireHoldTime == Globals.MAX_FIRE) {
 				if (Globals.playerColor == Color.red) { // knight
 					if (rigidbody.velocity.magnitude > 0) {
-						rigidbody.velocity = speedDir * Globals.FAST_FORWARD_SPEED; // fast forward and destroy!
+						rigidbody.velocity = speedDir * Globals.FAST_FORWARD_SPEED;
+						Globals.destroyWhileFastForwarding = true;
+//						TODO: add some effect?
+						StartCoroutine("DestroyWhileFastForwarding");
 					}
-					Globals.destroyWhileFastForwarding = true;
-					StartCoroutine("DestroyWhileFastForwarding");
 				} else if (Globals.playerColor == Color.green) {  // mage
 
 				} else if (Globals.playerColor == Color.cyan) { // assassin
 
 				}  else if (Globals.playerColor == Color.magenta) { // amazon
-
+					Globals.destroyWhileFastForwarding = true;
+					//						TODO: add some effect?
+					StartCoroutine("ShootInAllDirections");
 				}
 			}
 
@@ -79,6 +82,8 @@ public class Move : MonoBehaviour {
 		if (Input.GetKey(KeyCode.Z)) {
 			if (Globals.fireHoldTime < Globals.MAX_FIRE) {
 				Globals.fireHoldTime++;
+			} else {
+				renderer.material.color = Color.white;
 			}
 		}
 
@@ -118,13 +123,61 @@ public class Move : MonoBehaviour {
 		}
 	}
 	
-	IEnumerator DestroyWhileFastForwarding () {
+	IEnumerator DestroyWhileFastForwarding() {
 		// forward and destroy for one single second
 		yield return new WaitForSeconds(1f);
+		renderer.material.color = Globals.playerColor;
+		Globals.destroyWhileFastForwarding = false;
+	}
+	
+	IEnumerator ShootInAllDirections() {
+		// shoot in all directions for 2 seconds
+		for (int times = 0; times < 1; times++) {
+			for (int index = 0; index < 5; index++) {
+
+				Vector3 perp2 = Vector3.Cross(Vector3.up, speedDir);
+				perp2.Normalize();
+				Vector3 perp3 = -perp2;
+				Vector3 perp4 = -speedDir;
+
+				Vector3 speedDir1 = Vector3.Lerp(speedDir, perp2,  0.1f * index);
+				speedDir1.Normalize();
+				Vector3 speedDir2 = Vector3.Lerp(perp2, perp4,  0.1f * index);
+				speedDir2.Normalize();
+				Vector3 speedDir3 = Vector3.Lerp(perp4, perp3, 0.1f * index);
+				speedDir3.Normalize();
+				Vector3 speedDir4 = Vector3.Lerp(perp3, speedDir, 0.1f * index);
+				speedDir4.Normalize();
+				GameObject bullet1 = Instantiate(refBullet, transform.position + 1 * speedDir1, Quaternion.identity) as GameObject;
+				bullet1.rigidbody.velocity = speedDir1 * bulletSpeed;
+				GameObject bullet2 = Instantiate(refBullet, transform.position + 1 * speedDir2, Quaternion.identity) as GameObject;
+				bullet2.rigidbody.velocity = speedDir2 * bulletSpeed;
+				GameObject bullet3 = Instantiate(refBullet, transform.position + 1 * speedDir3, Quaternion.identity) as GameObject;
+				bullet3.rigidbody.velocity = speedDir3 * bulletSpeed;
+				GameObject bullet4 = Instantiate(refBullet, transform.position + 1 * speedDir4, Quaternion.identity) as GameObject;
+				bullet4.rigidbody.velocity = speedDir4 * bulletSpeed;
+				
+				Vector3 perp5 = Vector3.Lerp(speedDir, perp2, 0.5f + 0.1f * index);
+				Vector3 perp6 = Vector3.Lerp(perp2, perp4, 0.5f + 0.1f * index);
+				Vector3 perp7 = Vector3.Lerp(perp4, perp3, 0.5f + 0.1f * index);
+				Vector3 perp8 = Vector3.Lerp(perp3, speedDir, 0.5f + 0.1f * index);
+				GameObject bullet5 = Instantiate(refBullet, transform.position + 1 * perp5, Quaternion.identity) as GameObject;
+				bullet5.rigidbody.velocity = perp5 * bulletSpeed;
+				GameObject bullet6 = Instantiate(refBullet, transform.position + 1 * perp6, Quaternion.identity) as GameObject;
+				bullet6.rigidbody.velocity = perp6 * bulletSpeed;
+				GameObject bullet7 = Instantiate(refBullet, transform.position + 1 * perp7, Quaternion.identity) as GameObject;
+				bullet7.rigidbody.velocity = perp7 * bulletSpeed;
+				GameObject bullet8 = Instantiate(refBullet, transform.position + 1 * perp8, Quaternion.identity) as GameObject;
+				bullet8.rigidbody.velocity = perp8 * bulletSpeed;
+
+				yield return new WaitForSeconds(0.05f);
+			}
+		}
+		renderer.material.color = Globals.playerColor;
 		Globals.destroyWhileFastForwarding = false;
 	}
 
-	IEnumerator FlyToHeavenWhileFading () {
+	IEnumerator FlyToHeavenWhileFading() {
 		Vector3 newPosition = transform.position;
 		Color c = renderer.material.color;
 		float a, y;
