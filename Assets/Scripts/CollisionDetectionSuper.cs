@@ -9,13 +9,16 @@ public class CollisionDetectionSuper : MonoBehaviour {
 
 	void OnCollisionEnter(Collision collision)
 	{
-		if (collision.gameObject.tag == collidedTo)
-		{
-			Destroy(collision.gameObject);
-			if (--enemyEnergy <= 0) {
-				audio.Play();
-				StartCoroutine("DeferredSuicide", gameObject);
-			}
+		if (collision.gameObject.tag == collidedTo) {
+			Destroy(collision.gameObject); // remove bullet
+			--enemyEnergy;
+		} else if (Globals.destroyWhileFastForwarding == true) {
+			enemyEnergy = 0;
+		}
+		
+		if (enemyEnergy <= 0) {
+			audio.Play();
+			StartCoroutine("DeferredSuicide", gameObject);
 		}
 	}
 	

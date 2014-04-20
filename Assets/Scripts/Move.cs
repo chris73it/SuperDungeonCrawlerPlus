@@ -10,6 +10,7 @@ public class Move : MonoBehaviour {
 	public AudioClip deathSound;
 
 	Vector3 lastSpeed = new Vector3(0,0,1);
+	Vector3 speedDir;
 
 	void Start() {
 		renderer.material.color = Globals.playerColor;
@@ -42,7 +43,7 @@ public class Move : MonoBehaviour {
 
 		// Calculate the player direction
 		// Remember the last direction player was moving towards
-		Vector3 speedDir = Vector3.ClampMagnitude(new Vector3(translationX, 0, translationZ), 1);
+		speedDir = Vector3.ClampMagnitude(new Vector3(translationX, 0, translationZ), 1);
 		if (speedDir.magnitude == 0) {
 			speedDir = lastSpeed;
 		} else {
@@ -53,22 +54,30 @@ public class Move : MonoBehaviour {
 		// Reset fire power when the Z button is not pressed
 		if (Input.GetKeyUp(KeyCode.Z)) {
 
+			if (Globals.fireHoldTime == Globals.MAX_FIRE) {
+				if (Globals.playerColor == Color.red) { // knight
+					if (rigidbody.velocity.magnitude > 0) {
+						rigidbody.velocity = speedDir * Globals.FAST_FORWARD_SPEED; // fast forward and destroy!
+					}
+					Globals.destroyWhileFastForwarding = true;
+					StartCoroutine("DestroyWhileFastForwarding");
+				} else if (Globals.playerColor == Color.green) {  // mage
+
+				} else if (Globals.playerColor == Color.cyan) { // assassin
+
+				}  else if (Globals.playerColor == Color.magenta) { // amazon
+
+				}
+			}
+
 			Globals.fireHoldTime = 0;
 
-			if (Globals.playerColor == Color.red) { // knight
-
-			} else if (Globals.playerColor == Color.green) {  // mage
-
-			} else if (Globals.playerColor == Color.cyan) { // assassin
-
-			}  else if (Globals.playerColor == Color.magenta) { // amazon
-
-			}
+			return;
 		}
 
 		// Increase fire power when the Z button is being hold down
 		if (Input.GetKey(KeyCode.Z)) {
-			if (Globals.fireHoldTime < Globals.MAX_FIRE_HOLD_TIME) {
+			if (Globals.fireHoldTime < Globals.MAX_FIRE) {
 				Globals.fireHoldTime++;
 			}
 		}
@@ -109,6 +118,12 @@ public class Move : MonoBehaviour {
 		}
 	}
 	
+	IEnumerator DestroyWhileFastForwarding () {
+		// forward and destroy for one single second
+		yield return new WaitForSeconds(1f);
+		Globals.destroyWhileFastForwarding = false;
+	}
+
 	IEnumerator FlyToHeavenWhileFading () {
 		Vector3 newPosition = transform.position;
 		Color c = renderer.material.color;

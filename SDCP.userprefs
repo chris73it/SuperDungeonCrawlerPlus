@@ -1,25 +1,28 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Globals.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CollisionDetectionSuper.cs">
     <Files>
-      <File FileName="Assets/Scripts/Move.cs" Line="61" Column="37" />
+      <File FileName="Assets/Scripts/Move.cs" Line="60" Column="89" />
       <File FileName="Assets/Scripts/Shoot.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Globals.cs" Line="8" Column="49" />
-      <File FileName="Assets/Scripts/Follow.cs" Line="21" Column="3" />
+      <File FileName="Assets/Scripts/Globals.cs" Line="19" Column="46" />
+      <File FileName="Assets/Scripts/Follow.cs" Line="20" Column="1" />
       <File FileName="Assets/Scripts/Spawner.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/DeleteOnStop.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/PickUpPinkKey.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/PickUpRedKey.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Shortcuts.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/CharSelMenu.cs" Line="48" Column="49" />
-      <File FileName="Assets/Scripts/HUD.cs" Line="26" Column="51" />
+      <File FileName="Assets/Scripts/CharSelMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/HUD.cs" Line="14" Column="34" />
+      <File FileName="Assets/Scripts/CollisionDetection.cs" Line="22" Column="4" />
+      <File FileName="Assets/Scripts/PlayerCollision.cs" Line="19" Column="25" />
+      <File FileName="Assets/Scripts/CollisionDetectionSuper.cs" Line="22" Column="4" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Assembly-CSharp" expanded="True">
             <Node name="Scripts" expanded="True">
-              <Node name="Globals.cs" selected="True" />
+              <Node name="CollisionDetectionSuper.cs" selected="True" />
             </Node>
           </Node>
         </State>
