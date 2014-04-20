@@ -3,9 +3,6 @@ using System.Collections;
 
 public class Shortcuts : MonoBehaviour {
 
-	static public int weaponType = 3;
-
-	// Update is called once per frame
 	void Update () {
 		// Pause/Unpause the game by pressing P
 		if (Input.GetKeyDown(KeyCode.P)) {
@@ -19,11 +16,11 @@ public class Shortcuts : MonoBehaviour {
 
 		// Select weapon type (debug only)
 		if (Input.GetKeyDown("1")) {
-			weaponType = 1;
+			Globals.weaponType = 1;
 		} else if (Input.GetKeyDown("2")) {
-			weaponType = 2;
+			Globals.weaponType = 2;
 		} if (Input.GetKeyDown("3")) {
-			weaponType = 3; 
+			Globals.weaponType = 3; 
 		}
 	}
 }

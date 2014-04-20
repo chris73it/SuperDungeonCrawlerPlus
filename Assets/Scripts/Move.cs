@@ -45,6 +45,18 @@ public class Move : MonoBehaviour {
 			lastSpeed = speedDir;
 		}
 
+		// Reset fire power when the Z button is not pressed
+		if (Input.GetKeyUp(KeyCode.Z)) {
+			Globals.fireHoldTime = 0;
+		}
+
+		// Increase fire power when the Z button is being hold down
+		if (Input.GetKey(KeyCode.Z)) {
+			if (Globals.fireHoldTime < Globals.MAX_FIRE_HOLD_TIME) {
+				Globals.fireHoldTime++;
+			}
+		}
+
 		// Shoot when the Z button is being pressed
 		if (Input.GetKeyDown(KeyCode.Z)) {
 
@@ -62,20 +74,20 @@ public class Move : MonoBehaviour {
 			Vector3 speedDir5 = Vector3.Lerp(speedDir, perp2, 0.22f);
 			speedDir3.Normalize();
 
-			if (Shortcuts.weaponType == 1 || Shortcuts.weaponType == 2 || Shortcuts.weaponType == 3) {
-				GameObject bullet = Instantiate(refBullet, transform.position + 1 * speedDir, transform.rotation) as GameObject;
+			if (Globals.weaponType == 1 || Globals.weaponType == 2 || Globals.weaponType == 3) {
+				GameObject bullet = Instantiate(refBullet, transform.position + 1 * speedDir, Quaternion.identity) as GameObject;
 				bullet.rigidbody.velocity = speedDir * bulletSpeed;
 			}
-			if (Shortcuts.weaponType == 2 || Shortcuts.weaponType == 3) {
-				GameObject bullet2 = Instantiate(refBullet, transform.position + 1 * speedDir2, transform.rotation) as GameObject;
+			if (Globals.weaponType == 2 || Globals.weaponType == 3) {
+				GameObject bullet2 = Instantiate(refBullet, transform.position + 1 * speedDir2, Quaternion.identity) as GameObject;
 				bullet2.rigidbody.velocity = speedDir2 * bulletSpeed;
-				GameObject bullet3 = Instantiate(refBullet, transform.position + 1 * speedDir3, transform.rotation) as GameObject;
+				GameObject bullet3 = Instantiate(refBullet, transform.position + 1 * speedDir3, Quaternion.identity) as GameObject;
 				bullet3.rigidbody.velocity = speedDir3 * bulletSpeed;
 			}
-			if (Shortcuts.weaponType == 3) {
-				GameObject bullet4 = Instantiate(refBullet, transform.position + 1 * speedDir4, transform.rotation) as GameObject;
+			if (Globals.weaponType == 3) {
+				GameObject bullet4 = Instantiate(refBullet, transform.position + 1 * speedDir4, Quaternion.identity) as GameObject;
 				bullet4.rigidbody.velocity = speedDir4 * bulletSpeed;
-				GameObject bullet5 = Instantiate(refBullet, transform.position + 1 * speedDir5, transform.rotation) as GameObject;
+				GameObject bullet5 = Instantiate(refBullet, transform.position + 1 * speedDir5, Quaternion.identity) as GameObject;
 				bullet5.rigidbody.velocity = speedDir5 * bulletSpeed; 
 			}
 		}
