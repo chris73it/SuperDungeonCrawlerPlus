@@ -20,10 +20,14 @@ public class Move : MonoBehaviour {
 		// Get the horizontal and vertical axis delta movements.
 		// By default they are mapped to the arrow keys.
 		// The value is in the range -1 to 1
-		// Move translation along the object's x-axis and z-axis
+		// Move along the object's x-axis and z-axis
+		// Move camera to follow the player while staying at the same distance
 		float translationX = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
 		float translationZ = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 		transform.position += new Vector3(translationX, 0, translationZ);
+		cam.transform.position = new Vector3(transform.position.x, Globals.CAMERA_DISTANCE, transform.position.z-1);
+
+		// when player falls exit
 		if (transform.position.y < Globals.MINIMUM_HEIGHT && Globals.dying == false) {
 			Globals.dying = true;
 			audio.PlayOneShot(deathSound, 1f);
@@ -31,13 +35,14 @@ public class Move : MonoBehaviour {
 			StartCoroutine("FlyToHeavenWhileFading");
 		}
 
-		// Move camera to follow the player while staying at the same distance
-		cam.transform.position = new Vector3(transform.position.x, Globals.CAMERA_DISTANCE, transform.position.z-1);
+		// while the player is "flying to heaven", it shouldn't be allowed to shoot
+		if (Globals.dying == true) {
+			return;
+		}
 
 		// Calculate the player direction
-		Vector3 speedDir = Vector3.ClampMagnitude(new Vector3(translationX, 0, translationZ), 1);
-
 		// Remember the last direction player was moving towards
+		Vector3 speedDir = Vector3.ClampMagnitude(new Vector3(translationX, 0, translationZ), 1);
 		if (speedDir.magnitude == 0) {
 			speedDir = lastSpeed;
 		} else {
@@ -47,7 +52,18 @@ public class Move : MonoBehaviour {
 
 		// Reset fire power when the Z button is not pressed
 		if (Input.GetKeyUp(KeyCode.Z)) {
+
 			Globals.fireHoldTime = 0;
+
+			if (Globals.playerColor == Color.red) { // knight
+
+			} else if (Globals.playerColor == Color.green) {  // mage
+
+			} else if (Globals.playerColor == Color.cyan) { // assassin
+
+			}  else if (Globals.playerColor == Color.magenta) { // amazon
+
+			}
 		}
 
 		// Increase fire power when the Z button is being hold down
@@ -109,7 +125,6 @@ public class Move : MonoBehaviour {
 			
 			yield return new WaitForSeconds(0.016f);
 		}
-		Debug.Log ("Globals.numLives: " + Globals.numLives);
 		Globals.dying = false;
 		if (Globals.numLives <= 0) {
 			Application.LoadLevel("Fail_Screen");
