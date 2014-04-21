@@ -10,7 +10,7 @@ public class Globals : MonoBehaviour {
 	//public const int MAX_FIRE_HOLD_TIME = 50;
 	public const float CAMERA_DISTANCE = 13f;
 	public const int ENEMY_INITIAL_ENERGY = 3;
-	public const int SUPER_ENEMY_INITIAL_ENERGY = 5;
+	public const int SUPER_ENEMY_INITIAL_ENERGY = 4;
 	public const int NEST_INITIAL_ENERGY = 20;
 	public const int SUPER_NEST_INITIAL_ENERGY = 60;
 	public const float MINIMUM_HEIGHT = -10; // below this height player dies
