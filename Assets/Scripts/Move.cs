@@ -59,16 +59,25 @@ public class Move : MonoBehaviour {
 					if (rigidbody.velocity.magnitude > 0) {
 						rigidbody.velocity = speedDir * Globals.FAST_FORWARD_SPEED;
 						Globals.destroyWhileFastForwarding = true;
-//						TODO: add some effect?
+						// TODO: add some effect?
 						StartCoroutine("DestroyWhileFastForwarding");
+					} else {
+						renderer.material.color = Globals.playerColor;
 					}
 				} else if (Globals.playerColor == Color.green) {  // mage
-
+					//...
 				} else if (Globals.playerColor == Color.cyan) { // assassin
-
-				}  else if (Globals.playerColor == Color.magenta) { // amazon
+					if (rigidbody.velocity.magnitude > 0) {
+						rigidbody.velocity = speedDir * Globals.FAST_FORWARD_SPEED;
+						Globals.destroyWhileFastForwarding = true;
+						// TODO: add some effect?
+						StartCoroutine("DestroyWhileFastForwarding");
+					} else {
+						renderer.material.color = Globals.playerColor;
+					}
+				} else if (Globals.playerColor == Color.magenta) { // amazon
 					Globals.destroyWhileFastForwarding = true;
-					//						TODO: add some effect?
+					// TODO: add some effect?
 					StartCoroutine("ShootInAllDirections");
 				}
 			}
