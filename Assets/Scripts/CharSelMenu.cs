@@ -16,7 +16,6 @@ public class CharSelMenu : MonoBehaviour {
 			Debug.Log("Clicked the Warrior button");
 			clicked = true;
 			Globals.playerColor = GUI.color;
-			Globals.weaponType = 1;
 		}
 
 		GUI.color = Color.green;
@@ -24,7 +23,6 @@ public class CharSelMenu : MonoBehaviour {
 			Debug.Log("Clicked the Archer button");
 			clicked = true;
 			Globals.playerColor = GUI.color;
-			Globals.weaponType = 1;
 		}
 
 		GUI.color = Color.cyan;
@@ -32,7 +30,6 @@ public class CharSelMenu : MonoBehaviour {
 			Debug.Log("Clicked the Wizard button");
 			clicked = true;
 			Globals.playerColor = GUI.color;
-			Globals.weaponType = 1;
 		}
 
 		GUI.color = Color.magenta;
@@ -40,7 +37,6 @@ public class CharSelMenu : MonoBehaviour {
 			Debug.Log("Clicked the Knight button");
 			clicked = true;
 			Globals.playerColor = GUI.color;
-			Globals.weaponType = 1;
 		}
 
 		if (clicked == true) {

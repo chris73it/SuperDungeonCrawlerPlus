@@ -1,10 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Move.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Globals.cs">
     <Files>
-      <File FileName="Assets/Scripts/Move.cs" Line="59" Column="45" />
+      <File FileName="Assets/Scripts/CollisionDetectionSuper.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Move.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Shoot.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Globals.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Globals.cs" Line="10" Column="1" />
       <File FileName="Assets/Scripts/Follow.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Spawner.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/DeleteOnStop.cs" Line="1" Column="1" />
@@ -15,7 +16,6 @@
       <File FileName="Assets/Scripts/HUD.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/CollisionDetection.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/PlayerCollision.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/CollisionDetectionSuper.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

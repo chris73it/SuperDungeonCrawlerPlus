@@ -3,6 +3,8 @@ using System.Collections;
 
 public class NextRedLevel : MonoBehaviour {
 
+	public AudioClip incompletePuzzleSound;
+
 	GameObject target;
 	float speed = 2.5f;
 
@@ -12,7 +14,10 @@ public class NextRedLevel : MonoBehaviour {
 
 	void OnCollisionEnter (Collision collision) {
 
-		if (PickUpRedKey.gotRedKey == false) { return;  }
+		if (PickUpRedKey.gotRedKey == false) {
+			audio.PlayOneShot(incompletePuzzleSound, 2f);
+			return;
+		}
 
 		if (collision.gameObject == target)
 		{

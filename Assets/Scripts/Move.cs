@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 
 public class Move : MonoBehaviour {
+
+	const int RING_Y_BUFFER_SIZE = 8;
 
 	public Camera cam;
 	public float speed;
@@ -9,12 +12,57 @@ public class Move : MonoBehaviour {
 	public GameObject refBullet;
 	public AudioClip deathSound;
 
+	public AudioClip fallingSound;
+	//public AudioSource fallingSound;
+	bool playingFallingSound = false;
+	float[] transformPositionY = new float[RING_Y_BUFFER_SIZE];
+	int transformPositionYIndex = 0;
+	
 	Vector3 lastSpeed = new Vector3(0,0,1);
 	Vector3 speedDir;
 
+	void InitRingYBufffer() {
+		for (int y = 0; y < RING_Y_BUFFER_SIZE; y++) {
+			transformPositionY[y] = Globals.MINIMUM_HEIGHT;
+		}
+	}
+
 	void Start() {
+		InitRingYBufffer();
 		renderer.material.color = Globals.playerColor;
 		refBullet.renderer.material.color = Globals.playerColor;
+	}
+	
+	void FixedUpdate () {
+		// detect player is falling: if after 8 consecutives updates it is established that the player is falling with a speed of 1.3f, then play the scream sound
+		// NOTE: 1.3f is not a speed, instead it is a number that is propotional to the space covered during the time it took the player to fall for 8 consecutive updates
+		// NOTE: it is preferred to use a one shot play because it cannot be interrupted by the "death has you" sound
+		transformPositionY[transformPositionYIndex] = transform.position.y;
+
+		if (playingFallingSound == false) {
+		    if (transformPositionY[(transformPositionYIndex   -0+RING_Y_BUFFER_SIZE)%RING_Y_BUFFER_SIZE] < transformPositionY[(transformPositionYIndex-1+RING_Y_BUFFER_SIZE)%RING_Y_BUFFER_SIZE]
+		    	&& transformPositionY[(transformPositionYIndex-1+RING_Y_BUFFER_SIZE)%RING_Y_BUFFER_SIZE] < transformPositionY[(transformPositionYIndex-2+RING_Y_BUFFER_SIZE)%RING_Y_BUFFER_SIZE]
+			    && transformPositionY[(transformPositionYIndex-2+RING_Y_BUFFER_SIZE)%RING_Y_BUFFER_SIZE] < transformPositionY[(transformPositionYIndex-3+RING_Y_BUFFER_SIZE)%RING_Y_BUFFER_SIZE]
+			    && transformPositionY[(transformPositionYIndex-3+RING_Y_BUFFER_SIZE)%RING_Y_BUFFER_SIZE] < transformPositionY[(transformPositionYIndex-4+RING_Y_BUFFER_SIZE)%RING_Y_BUFFER_SIZE]
+			    && transformPositionY[(transformPositionYIndex-4+RING_Y_BUFFER_SIZE)%RING_Y_BUFFER_SIZE] < transformPositionY[(transformPositionYIndex-5+RING_Y_BUFFER_SIZE)%RING_Y_BUFFER_SIZE]
+			    && transformPositionY[(transformPositionYIndex-5+RING_Y_BUFFER_SIZE)%RING_Y_BUFFER_SIZE] < transformPositionY[(transformPositionYIndex-6+RING_Y_BUFFER_SIZE)%RING_Y_BUFFER_SIZE]
+			    && transformPositionY[(transformPositionYIndex-6+RING_Y_BUFFER_SIZE)%RING_Y_BUFFER_SIZE] < transformPositionY[(transformPositionYIndex-7+RING_Y_BUFFER_SIZE)%RING_Y_BUFFER_SIZE]
+			    && (transformPositionY[(transformPositionYIndex-(RING_Y_BUFFER_SIZE-1)+RING_Y_BUFFER_SIZE)%RING_Y_BUFFER_SIZE] - transformPositionY[(transformPositionYIndex+0+RING_Y_BUFFER_SIZE)%RING_Y_BUFFER_SIZE]) > 1.3f) {
+					// NOTE: using 1.3f makes the player scream when it falls throguh the cliff, but not when it falls from the tree or it is hit by a blue nest's disc
+					playingFallingSound = true;
+					audio.PlayOneShot(fallingSound, 1f);
+					//fallingSound.Play();
+					StartCoroutine("FallingSound");
+			}
+		}
+		transformPositionYIndex++;
+		transformPositionYIndex %= RING_Y_BUFFER_SIZE;
+	}
+	
+	IEnumerator FallingSound() {
+		yield return new WaitForSeconds(1f);
+		playingFallingSound = false;
+		InitRingYBufffer();
 	}
 
 	void Update () {
@@ -65,7 +113,9 @@ public class Move : MonoBehaviour {
 						renderer.material.color = Globals.playerColor;
 					}
 				} else if (Globals.playerColor == Color.green) {  // mage
-					//...
+					Globals.destroyWhileFastForwarding = true;
+					// TODO: add some effect?
+					StartCoroutine("ShootInAllDirections");
 				} else if (Globals.playerColor == Color.cyan) { // assassin
 					if (rigidbody.velocity.magnitude > 0) {
 						rigidbody.velocity = speedDir * Globals.FAST_FORWARD_SPEED;
@@ -76,6 +126,10 @@ public class Move : MonoBehaviour {
 						renderer.material.color = Globals.playerColor;
 					}
 				} else if (Globals.playerColor == Color.magenta) { // amazon
+					Globals.destroyWhileFastForwarding = true;
+					// TODO: add some effect?
+					StartCoroutine("ShootInAllDirections");
+				} else if (Globals.playerColor == Color.grey) { // place-holder
 					Globals.destroyWhileFastForwarding = true;
 					// TODO: add some effect?
 					StartCoroutine("ShootInAllDirections");
@@ -138,7 +192,7 @@ public class Move : MonoBehaviour {
 		renderer.material.color = Globals.playerColor;
 		Globals.destroyWhileFastForwarding = false;
 	}
-	
+
 	IEnumerator ShootInAllDirections() {
 		// shoot in all directions for 2 seconds
 		for (int times = 0; times < 1; times++) {
