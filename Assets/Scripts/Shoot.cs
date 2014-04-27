@@ -23,7 +23,7 @@ public class Shoot : MonoBehaviour {
 				fromToDir.Normalize();
 
 				Vector3 newPosition = transform.position;
-				newPosition.y = 1.5f;
+				newPosition.y += 1.5f;
 
 				GameObject newBullet = Instantiate(bullet, newPosition, Quaternion.identity) as GameObject;
 				newBullet.rigidbody.velocity = fromToDir * speed;

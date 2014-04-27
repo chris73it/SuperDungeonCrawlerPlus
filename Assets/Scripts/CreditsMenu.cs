@@ -43,13 +43,13 @@ public class CreditsMenu : MonoBehaviour {
 
 				if (clickedBri == true) {
 			GUI.color = Color.white;
-						GUI.TextField(new Rect(distanceBetweenButtons, 150, Globals.MENU_BUTTON_WIDTH, Globals.MENU_BUTTON_HEIGHT), "Logo and character drawings");
+						GUI.TextField(new Rect(distanceBetweenButtons, 150, Globals.MENU_BUTTON_WIDTH, Globals.MENU_BUTTON_HEIGHT), "Game Logo");
 					} else if (clickedRoss == true) {
 						GUI.color = Color.yellow;
-						GUI.TextField(new Rect(2*distanceBetweenButtons+Globals.MENU_BUTTON_WIDTH, 150, Globals.MENU_BUTTON_WIDTH, Globals.MENU_BUTTON_HEIGHT), "Concept and level design");
+						GUI.TextField(new Rect(2*distanceBetweenButtons+Globals.MENU_BUTTON_WIDTH, 150, Globals.MENU_BUTTON_WIDTH, Globals.MENU_BUTTON_HEIGHT), "Concept\nLevel Design\nMusic\nSounds");
 					} else if (clickedChris == true) {
 						GUI.color = Color.cyan;
-						GUI.TextField(new Rect(3*distanceBetweenButtons+2*Globals.MENU_BUTTON_WIDTH, 150, Globals.MENU_BUTTON_WIDTH, Globals.MENU_BUTTON_HEIGHT), "Design and implementation");
+						GUI.TextField(new Rect(3*distanceBetweenButtons+2*Globals.MENU_BUTTON_WIDTH, 150, Globals.MENU_BUTTON_WIDTH, Globals.MENU_BUTTON_HEIGHT), "Game Design\nImplementation");
 			}
 			GUI.EndGroup();
 		}

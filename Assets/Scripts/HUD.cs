@@ -2,9 +2,16 @@
 using System.Collections;
 
 public class HUD : MonoBehaviour {
+
+	void Awake() {
+		Globals.currentLevel = Application.loadedLevel;
+	}
+
 	// drag a texture as the icon to move on the progress bar
 	public Texture vertBar;
-	
+
+	int lastLevel;
+
 	// GUI bar width height and progress
 	const float labelWidth = 48f;
 	const float barWidth = 128f;
@@ -16,6 +23,7 @@ public class HUD : MonoBehaviour {
 	float barWidthOverMaxEnergy;
 	float barWidthOverMaxFire;
 	void Start() {
+		lastLevel = Application.levelCount-1-3;
 		barWidthOverMaxEnergy = barWidth / maxEnergy;
 		barWidthOverMaxFire = barWidth / maxFire;
 	}
@@ -34,9 +42,9 @@ public class HUD : MonoBehaviour {
 		GUI.BeginGroup(new Rect (10, 10, 2*labelWidth+barWidth, 5*barHeight));
 		
 		// add level text label at the very top position within the GUI.group
-		if (Globals.currentLevel >= Globals.LAST_LEVEL) {
-			GUI.Label(new Rect(0, 0, 2*labelWidth, barHeight), "Level   " + (Globals.LAST_LEVEL-2));
-		} else if (Globals.currentLevel >= 0) {
+		if (Globals.currentLevel >= lastLevel) {
+			GUI.Label(new Rect(0, 0, 2*labelWidth, barHeight), "Level   " + (lastLevel-2));
+		} else {
 			GUI.Label(new Rect(0, 0, 2*labelWidth, barHeight), "Level   " + (Globals.currentLevel-2));
 		}
 		

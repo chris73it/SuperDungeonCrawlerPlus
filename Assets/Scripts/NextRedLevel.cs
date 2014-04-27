@@ -14,13 +14,12 @@ public class NextRedLevel : MonoBehaviour {
 
 	void OnCollisionEnter (Collision collision) {
 
-		if (PickUpRedKey.gotRedKey == false) {
-			audio.PlayOneShot(incompletePuzzleSound, 2f);
-			return;
-		}
-
 		if (collision.gameObject == target)
 		{
+			if (PickUpRedKey.gotRedKey == false) {
+				audio.PlayOneShot(incompletePuzzleSound, 2f);
+				return;
+			}
 			audio.Play();
 			StartCoroutine("CenterTarget", collision);
 		}
@@ -42,6 +41,6 @@ public class NextRedLevel : MonoBehaviour {
 			yield return new WaitForSeconds(0.016f);
 		}
 		PickUpRedKey.gotRedKey = false;
-		Application.LoadLevel("Win_Screen");
+		Application.LoadLevel(++Globals.currentLevel);
 	}
 }
