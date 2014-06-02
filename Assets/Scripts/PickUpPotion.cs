@@ -11,7 +11,7 @@ public class PickUpBigPotion : MonoBehaviour {
 		{
 			audio.Play();
 			StartCoroutine("DeferredSuicide", gameObject);
-			Globals.score += 50;
+			Globals.score += 0;
 			Globals.playerEnergy = Globals.INITIAL_ENERGY;
 		}
 	}

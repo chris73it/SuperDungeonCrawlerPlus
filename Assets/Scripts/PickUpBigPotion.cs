@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PickUpPotion : MonoBehaviour {
+public class Grape: MonoBehaviour {
 
 	public string collidedTo;
 	
@@ -11,7 +11,7 @@ public class PickUpPotion : MonoBehaviour {
 		{
 			audio.Play();
 			StartCoroutine("DeferredSuicide", gameObject);
-			Globals.score += 200;
+			Globals.score += 0;
 			Globals.playerEnergy += Globals.INITIAL_ENERGY *3 /10;
 			if (Globals.playerEnergy > Globals.INITIAL_ENERGY) {
 				Globals.playerEnergy = Globals.INITIAL_ENERGY;

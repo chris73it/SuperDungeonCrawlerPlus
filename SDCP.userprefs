@@ -1,12 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Move.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/NewShader.shader">
     <Files>
-      <File FileName="Assets/Scripts/NextRedLevel.cs" Line="20" Column="50" />
-      <File FileName="Assets/Scripts/Move.cs" Line="76" Column="75" />
+      <File FileName="Assets/ShaderForge/Readme.txt" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/NextRedLevel.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Move.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/CollisionDetectionSuper.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Shoot.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Globals.cs" Line="17" Column="44" />
+      <File FileName="Assets/Scripts/Globals.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Follow.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Spawner.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/DeleteOnStop.cs" Line="1" Column="1" />
@@ -20,15 +21,16 @@
       <File FileName="Assets/Scripts/Spin.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/EnterFromGreenWormHole.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/EnterFromPinkWormHole.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/CreditsMenu.cs" Line="17" Column="99" />
+      <File FileName="Assets/Scripts/CreditsMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets/NewShader.shader" Line="23" Column="22" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Assembly-CSharp" expanded="True">
-            <Node name="Scripts" expanded="True">
-              <Node name="Move.cs" selected="True" />
-            </Node>
+            <Node name="Scripts" expanded="True" />
+            <Node name="ShaderForge" expanded="True" />
+            <Node name="NewShader.shader" selected="True" />
           </Node>
         </State>
       </Pad>

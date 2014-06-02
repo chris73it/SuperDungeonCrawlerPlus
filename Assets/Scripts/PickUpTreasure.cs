@@ -11,7 +11,7 @@ public class PickUpTreasure : MonoBehaviour {
 		{
 			audio.Play();
 			StartCoroutine("DeferredSuicide", gameObject);
-			Globals.score += 70;
+			Globals.score += 1000;
 		}
 	}
 	

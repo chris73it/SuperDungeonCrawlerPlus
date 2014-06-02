@@ -9,9 +9,7 @@ public class HUD : MonoBehaviour {
 
 	// drag a texture as the icon to move on the progress bar
 	public Texture vertBar;
-
-	int lastLevel;
-
+	
 	// GUI bar width height and progress
 	const float labelWidth = 48f;
 	const float barWidth = 128f;
@@ -23,7 +21,6 @@ public class HUD : MonoBehaviour {
 	float barWidthOverMaxEnergy;
 	float barWidthOverMaxFire;
 	void Start() {
-		lastLevel = Application.levelCount-1-3;
 		barWidthOverMaxEnergy = barWidth / maxEnergy;
 		barWidthOverMaxFire = barWidth / maxFire;
 	}
@@ -42,27 +39,27 @@ public class HUD : MonoBehaviour {
 		GUI.BeginGroup(new Rect (10, 10, 2*labelWidth+barWidth, 5*barHeight));
 		
 		// add level text label at the very top position within the GUI.group
-		if (Globals.currentLevel >= lastLevel) {
-			GUI.Label(new Rect(0, 0, 2*labelWidth, barHeight), "Level   " + (lastLevel-2));
-		} else {
+		if (Globals.currentLevel >= Globals.LAST_LEVEL) {
+			GUI.Label(new Rect(0, 0, 2*labelWidth, barHeight), "Level   " + (Globals.LAST_LEVEL-2));
+		} else if (Globals.currentLevel >= 0) {
 			GUI.Label(new Rect(0, 0, 2*labelWidth, barHeight), "Level   " + (Globals.currentLevel-2));
 		}
 		
 		// add lives text label at the middle position within the GUI.group
-		GUI.Label(new Rect(0, barHeight, 2*labelWidth, barHeight), "Lives   "+Globals.numLives.ToString());
+		GUI.Label(new Rect(0, barHeight, 2*labelWidth, barHeight), "Awaken   "+Globals.numLives.ToString());
 		
 		// add energy text label at the leftmost position within the GUI.group
-		GUI.Label(new Rect(0, 2*barHeight, labelWidth, barHeight), "Energy");
+		GUI.Label(new Rect(0, 2*barHeight, labelWidth, barHeight), "Health");
 		//draw a box as the backing for the progress bar, blank text inside
 		GUI.Box(new Rect(labelWidth, 2*barHeight, barWidth, barHeight), "");
 		// add energy texture label that works as an indicator of the remaining energy
 		GUI.Label(new Rect(labelWidth+barEnergyProgress, 2*barHeight, vertBar.width, barHeight), vertBar);
 		
 		// add score text label at the bottom position within the GUI.group
-		GUI.Label(new Rect(0, 3*barHeight, 2*labelWidth, barHeight), "Score  "+Globals.score.ToString()); 
+		GUI.Label(new Rect(0, 3*barHeight, 2*labelWidth, barHeight), "Cints  "+Globals.score.ToString()); 
 		
 		// add fire text label at the leftmost position within the GUI.group
-		GUI.Label(new Rect(0, 4*barHeight, labelWidth, barHeight), "Fire");
+		GUI.Label(new Rect(0, 4*barHeight, labelWidth, barHeight), "Focus");
 		//draw a box as the backing for the progress bar, blank text inside
 		GUI.Box(new Rect(labelWidth, 4*barHeight, barWidth, barHeight), "");
 		// add energy texture label that works as an indicator of the remaining energy

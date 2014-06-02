@@ -2,19 +2,19 @@
 using System.Collections;
 
 public class Globals : MonoBehaviour {
-	//public const int LAST_LEVEL = 2 + 6; // character screen is "level 2"
+	public const int LAST_LEVEL = 2 + 6; // character screen is "level 2"
 	public const int INITIAL_LIVES = 3;
 	public const float INITIAL_ENERGY = 300f;
 	public const float MAX_ENERGY = INITIAL_ENERGY;
 	public const float MAX_FIRE = 50f;
 	public const float CAMERA_DISTANCE = 14f;
 	public const int ENEMY_INITIAL_ENERGY = 3;
-	public const int SUPER_ENEMY_INITIAL_ENERGY = 4;
-	public const int NEST_INITIAL_ENERGY = 20;
-	public const int SUPER_NEST_INITIAL_ENERGY = 60;
+	public const int SUPER_ENEMY_INITIAL_ENERGY = 6;
+	public const int NEST_INITIAL_ENERGY = 15;
+	public const int SUPER_NEST_INITIAL_ENERGY = 30;
 	public const float MINIMUM_HEIGHT = -10; // below this height player screams (and if the height is excessive dies too)
 	public const float MENU_BUTTON_WIDTH = 200f;
-	public const float MENU_BUTTON_HEIGHT = 64f;
+	public const float MENU_BUTTON_HEIGHT = 50f;
 	public const float FAST_FORWARD_SPEED = 15f;
 
 	static public bool dying = false;

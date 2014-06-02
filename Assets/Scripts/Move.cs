@@ -29,7 +29,6 @@ public class Move : MonoBehaviour {
 
 	void Start() {
 		InitRingYBufffer();
-
 		renderer.material.color = Globals.playerColor;
 		refBullet.renderer.material.color = Globals.playerColor;
 	}
@@ -75,7 +74,7 @@ public class Move : MonoBehaviour {
 		float translationX = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
 		float translationZ = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 		transform.position += new Vector3(translationX, 0, translationZ);
-		if (Globals.currentLevel >= 2 && Globals.currentLevel <= 2+4) {
+		if (Globals.currentLevel >= 0+2 && Globals.currentLevel <= 2+4) {
 			cam.transform.position = new Vector3(transform.position.x, Globals.CAMERA_DISTANCE, transform.position.z-1);
 		} else {
 			cam.transform.position = new Vector3(transform.position.x, Globals.CAMERA_DISTANCE+4, transform.position.z-1);
