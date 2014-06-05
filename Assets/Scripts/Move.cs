@@ -103,8 +103,8 @@ public class Move : MonoBehaviour {
 			lastSpeed = speedDir;
 		}
 
-		// Reset fire power when the Z button is not pressed (or released)
-		if (Input.GetKeyUp(KeyCode.Z)) {
+		// Reset fire power when the button is not pressed (or released)
+		if (Input.GetButtonUp("Fire2")) {
 
 			if (Globals.fireHoldTime == Globals.MAX_FIRE) {
 				if (Globals.playerColor == Color.red) { // knight
@@ -145,8 +145,8 @@ public class Move : MonoBehaviour {
 			return;
 		}
 
-		// Increase fire power when the Z button is being hold down
-		if (Input.GetKey(KeyCode.Z)) {
+		// Increase fire power when the button is being hold down
+		if (Input.GetButton("Fire2")) {
 			if (Globals.fireHoldTime < Globals.MAX_FIRE) {
 				Globals.fireHoldTime++;
 			} else {
@@ -154,8 +154,8 @@ public class Move : MonoBehaviour {
 			}
 		}
 
-		// Shoot when the Z button is being pressed
-		if (Input.GetKeyDown(KeyCode.Z)) {
+		// Shoot when the button is being pressed
+		if (Input.GetButtonDown("Fire2")) {
 
 			audio.Play();
 
